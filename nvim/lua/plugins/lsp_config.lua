@@ -1,3 +1,4 @@
+--mason.nvim is a Neovim plugin that allows you to easily manage external editor tooling such as LSP servers,
 return {
     {
         "williamboman/mason.nvim",
@@ -11,31 +12,29 @@ return {
         lazy = false,
         opts = {
             auto_install = true,
-            ensure_installed = { "lua_ls", "ts_ls", "rust_analyzer", "gopls", "pyright", "bashls", "jsonls", "yamlls", "html", "cssls", "tailwindcss", "svelte", "astro", "sqlls", "prismals", }
+            ensure_installed = {
+                "lua_ls",
+                "ts_ls",
+                "rust_analyzer",
+                "gopls",
+                "pyright",
+                "bashls",
+                "jsonls",
+                "yamlls",
+                "html",
+                "cssls",
+                "tailwindcss",
+                "svelte",
+                "astro",
+                "sqlls",
+                "prismals",
+            },
         },
-        --config = function()
-        --require("mason-lspconfig").setup({
-        --ensure_installed = { "lua_ls", "tsserver", "rust_analyzer" }
-        --})
-        --end
     },
     {
         "neovim/nvim-lspconfig",
         lazy = false,
         config = function()
-            vim.diagnostic.config({
-                virtual_text = false,     -- Disable virtual text (inline messages)
-                signs = false,            -- Disable signs in the gutter
-                underline = true,         -- Keep the red underline
-                update_in_insert = false, -- Don't update diagnostics in insert mode
-                severity_sort = true,
-                float = {                 -- Configure the float window
-                    show_header = false,
-                    source = false,
-                    border = "rounded",
-                    header = "",
-                },
-            })
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local lspConfig = require("lspconfig")
             lspConfig.lua_ls.setup({
@@ -50,14 +49,12 @@ return {
             lspConfig.ts_ls.setup({
                 capabilities = capabilities,
                 handlers = {
-                    ["textDocument/publishDiagnostics"] = vim.lsp.with(
-                        vim.lsp.diagnostic.on_publish_diagnostics, {
-                            virtual_text = false,
-                            signs = false,
-                            underline = true,
-                            update_in_insert = false,
-                        }
-                    )
+                    ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+                        virtual_text = false,
+                        signs = false,
+                        underline = true,
+                        update_in_insert = false,
+                    }),
                 },
             })
             lspConfig.rust_analyzer.setup({
@@ -96,13 +93,21 @@ return {
                         },
                     },
                 },
-
             })
-
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+
+            -- Set LSP UI Highlight Groups
+            vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultError", { fg = "#FF6C6B", bg = "#1C2021" })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultWarning", { fg = "#ECBE7B", bg = "#1C2021" })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultInformation", { fg = "#51AFEF", bg = "#1C2021" })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultHint", { fg = "#98BE65", bg = "#1C2021" })
+
+            -- For LSP floating windows
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1C2021" })
+            vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#51AFEF", bg = "#1C2021" })
         end,
     },
 }

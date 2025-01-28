@@ -1,3 +1,4 @@
+-- Neo-tree is a Neovim plugin to browse the file system and other tree like structures in whatever style suits you, including sidebars, floating windows, netrw split style, or all of them at once!
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
@@ -5,7 +6,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
-		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		-- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	keys = {
 		{ "<C-n>", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },
@@ -96,5 +97,17 @@ return {
 				},
 			},
 		})
+
+		-- Change the background color of NeoTree
+		vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#1C2021", fg = "#CDD6F4" }) -- Main window
+		vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "#1C2021", fg = "#CDD6F4" }) -- Inactive windows
+		vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "#1C2021", fg = "#1C2021" }) -- Remove `~` at end
+		vim.api.nvim_set_hl(0, "NeoTreeCursorLine", { bg = "#3C4048" }) -- Highlight current line
+
+		-- Highlight Groups for `source_selector`
+		vim.api.nvim_set_hl(0, "NeoTreeTabActive", { bg = "#282C34", fg = "#CDD6F4", bold = true }) -- Active source tab
+		vim.api.nvim_set_hl(0, "NeoTreeTabInactive", { bg = "#1C2021", fg = "#5B6268" }) -- Inactive source tabs
+		vim.api.nvim_set_hl(0, "NeoTreeTabSeparatorActive", { bg = "#282C34", fg = "#3C4048" }) -- Separator for active tabs
+		vim.api.nvim_set_hl(0, "NeoTreeTabSeparatorInactive", { bg = "#1C2021", fg = "#3C4048" }) -- Separator for inactive tabs
 	end,
 }
