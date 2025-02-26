@@ -2,7 +2,7 @@ font-family = BerkeleyMono Nerd Font
 #font-family = Iosevka Nerd Font
 # font-family = SFMono Nerd Font 
 font-size = 16
-theme = GruvboxDarkHard
+# theme = GruvboxDarkHard
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
@@ -15,8 +15,10 @@ window-padding-balance = true
 window-save-state = always
 macos-titlebar-style=transparent
 window-colorspace = "display-p3"
-background = 1C2021
-# foreground = d4be98
+# background = 1C2021
+background = 141617
+# background = 181925
+foreground = d4be98
 
 # keybindings
 keybind = cmd+s>r=reload_config
