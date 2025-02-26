@@ -1,5 +1,4 @@
 -- A blazing fast and easy to configure Neovim statusline written in Lua.
-
 local colors = {
 	color19 = "#9FDBF7",
 	color18 = "#84E1BC",

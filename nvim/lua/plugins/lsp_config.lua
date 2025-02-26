@@ -110,14 +110,14 @@ return {
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
 			-- Set LSP UI Highlight Groups
-			vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultError", { fg = "#FF6C6B", bg = "#1C2021" })
-			vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultWarning", { fg = "#ECBE7B", bg = "#1C2021" })
-			vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultInformation", { fg = "#51AFEF", bg = "#1C2021" })
-			vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultHint", { fg = "#98BE65", bg = "#1C2021" })
+			vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultError", { fg = "#FF6C6B", bg = "#141617" })
+			vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultWarning", { fg = "#ECBE7B", bg = "#141617" })
+			vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultInformation", { fg = "#51AFEF", bg = "#141617" })
+			vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultHint", { fg = "#98BE65", bg = "#141617" })
 
 			-- For LSP floating windows
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1C2021" })
-			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#51AFEF", bg = "#1C2021" })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#141617" })
+			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#51AFEF", bg = "#141617" })
 		end,
 	},
 }
