@@ -5,8 +5,8 @@ local colors = {
 	color10 = "#f07178",
 	color11 = "#3e4b59",
 	color12 = "#e6e1cf",
-	color13 = "#1C2021",
-	color4 = "#1C2021",
+	color13 = "#141617",
+	color4 = "#141617",
 	color5 = "#ffee99",
 }
 
