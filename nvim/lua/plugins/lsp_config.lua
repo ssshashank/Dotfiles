@@ -67,17 +67,17 @@ return {
 					}),
 				},
 			})
-			lspConfig.rust_analyzer.setup({
-				capabilities = capabilities,
-				filetypes = { "rust" },
-				settings = {
-					["rust_analyzer"] = {
-						cargo = {
-							allFeatures = true,
-						},
-					},
-				},
-			})
+			-- lspConfig.rust_analyzer.setup({
+			-- 	capabilities = capabilities,
+			-- 	filetypes = { "rust" },
+			-- 	settings = {
+			-- 		["rust_analyzer"] = {
+			-- 			cargo = {
+			-- 				allFeatures = true,
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
 			lspConfig.gopls.setup({
 				capabilities = capabilities,
 				cmd = { "gopls" },
@@ -129,3 +129,4 @@ return {
 		end,
 	},
 }
+
