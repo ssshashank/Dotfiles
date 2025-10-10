@@ -39,9 +39,9 @@ return {
                 git_status = {
                     symbols = {
                         -- Change type
-                        added = "",
-                        deleted = "",
-                        modified = "",
+                        added = "A",
+                        deleted = "D",
+                        modified = "M",
                         renamed = "",
                         -- Status type
                         untracked = "",
@@ -112,3 +112,4 @@ return {
 
     end,
 }
+

@@ -6,3 +6,4 @@ vim.api.nvim_set_keymap("i", "<D-a>", "<Esc>ggVG", { noremap = true, silent = tr
 
 -- Map Command + A to select all in visual mode
 vim.api.nvim_set_keymap("v", "<c-a>", "ggVG", { noremap = true, silent = true })
+

@@ -7,5 +7,6 @@ return {
 	end,
 	dependencies = {
 		"TheGLander/indent-rainbowline.nvim",
-	},
+	}
 }
+
