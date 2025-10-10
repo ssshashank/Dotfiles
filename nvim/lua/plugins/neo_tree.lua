@@ -22,8 +22,8 @@ return {
             sort_case_insensitive = true,
             default_component_configs = {
                 indent = {
-                    with_markers = true,
-                    with_expanders = true,
+                    -- with_markers = true,
+                    -- with_expanders = true,
                 },
                 modified = {
                     symbol = "M",

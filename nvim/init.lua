@@ -9,4 +9,3 @@ vim.g.loaded_netrwPlugin = 1
 require("config.key_binding")
 require("config.vim_options")
 require("config.lazy")
--- require("themes.anysphere").setup();

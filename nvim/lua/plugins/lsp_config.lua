@@ -8,30 +8,6 @@ return {
 		end,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
-		lazy = false,
-		opts = {
-			auto_install = true,
-			ensure_installed = {
-				"lua_ls",
-				"ts_ls",
-				"rust_analyzer",
-				"gopls",
-				"pyright",
-				"bashls",
-				"jsonls",
-				"yamlls",
-				"html",
-				"cssls",
-				"tailwindcss",
-				"svelte",
-				"astro",
-				"sqlls",
-				"prismals",
-			},
-		},
-	},
-	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
@@ -129,4 +105,3 @@ return {
 		end,
 	},
 }
-

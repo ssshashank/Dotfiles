@@ -9,6 +9,7 @@ local colors = {
 	color4 = "#141617",
 	color5 = "#ffee99",
 }
+--
 
 local ayu_dark = {
 	visual = {
